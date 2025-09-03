@@ -11,7 +11,7 @@ title = title.split('\t')
 writer.writerow(title)
 
 #[시가총액 순위]-[더보기]-[코스피] 1~200
-for page in range(1, 5):
+for page in range(1, 5): #1~4페이지 반복
     url=f'https://finance.naver.com/sise/sise_market_sum.naver?&page={page}'
     res = requests.get(url)
     soup = BeautifulSoup(res.text, 'lxml')

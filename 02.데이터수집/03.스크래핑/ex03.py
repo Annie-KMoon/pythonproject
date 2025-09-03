@@ -25,7 +25,7 @@
 import requests
 import csv #엑셀파일화
 from bs4 import BeautifulSoup
-import re
+import re #정규표현식, match, fullmatch, search 등 사용가능
 
 #파일로 저장
 file_name ='data/코스닥거래상위1~100.csv'
@@ -41,8 +41,10 @@ table = soup.find('table', attrs={'class':'type_2'})
 rows = table.find_all('tr')
 
 
+#?
 for row in rows:
     cols = row.find_all('td')
     if len(cols) <=1 :continue
-    data = [re.sub('\t|\n|하락|상승|보합','', col.getText()) for col in cols]
+    data = [re.sub('\t|\n|하락|상승|보합','', col.getText()) for col in cols] #리스트로 전환
+    # print(data)
     writer.writerow(data)
