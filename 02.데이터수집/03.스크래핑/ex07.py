@@ -17,5 +17,5 @@ for idx, img in enumerate(imgs):
     url = img['src']
     res_img = requests.get(url)
     file_name=path + f'/book{idx+1:02d}.jpg'
-    with open(file_name, 'wb') as file:
+    with open(file_name, 'wb') as file: #wb?
         file.write(res_img.content)
