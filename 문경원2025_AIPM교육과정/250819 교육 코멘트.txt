@@ -1,0 +1,363 @@
+250819
+
+names= ['홍길동', '심청이', '강감찬', '이순신', '성춘향']
+
+no=1
+for name in names:
+    print(f'{no}:{name}')
+    no +=1 #no 숫자 +1로 증가
+print('-'*50)
+
+for index, name in enumerate(names): #index, name에 리턴되는 값
+    print(f'{index+1}:{name}') #index+1, 1부터 시작
+print('-'*50)
+
+for index in range(len(names)):
+    print(f'{index+1}:{names[index]}')  #9라인과 같은값도출
+
+
+
+
+no = int(input('학생수>'))
+
+names = []
+for i in range(no): #0~no-1
+    name = input('이름>')
+    names.append(name)
+
+for i in range(len(names)):  #출력방법1
+    print(names[i], end=',')
+print()
+
+for name in names:   #출력방법2
+    print(name, end=',')
+
+print('\n')
+    
+for i, name in enumerate(names):   #출력방법3(인덱스넘버추가)
+    print(i+1,name,end=',')
+
+
+
+students=[
+    {"no":"1번", "이름":"홍길동", "국어":90, "영어":95, "수학": 98},
+    {"no":"2번", "이름":"강감찬", "국어":80, "영어":99, "수학": 96},
+    {"no":"3번", "이름":"이순신", "국어":92, "영어":85, "수학": 78},
+    {"no":"4번", "이름":"성춘향", "국어":78, "영어":55, "수학": 67},
+    {"no":"5번", "이름":"이몽룡", "국어":95, "영어":85, "수학": 87},
+ ]
+
+for s in students:
+    #print(type(s))
+    tot = s.get('국어')+s['영어']+s['수학'] #get/[]사용
+    avg = tot/3  #평균
+    result=''
+    if avg>=70:
+        result='Pass'
+    else:
+        result='Fail'
+    print(f'{s.get("no")}\t{s.get("이름")}\t{tot}\t{avg:.3f}\t{result}') #소수점 .2f(2번째)
+
+
+# from random import *
+# date = randint(4,28)
+# print('오프라인 스터디 모임 날짜는 매월'+str(date)+'일로 선정되었습니다.')
+
+# subway= [10,20,30]
+# print(subway)
+
+# subway= ['유재석', '조세호', '박명수']
+# print(subway)
+
+# print(subway.index('조세호'))
+
+# subway.append('하하')
+# print(subway)
+
+# subway.insert(1, '정형돈')
+# print(subway)
+
+# subway.pop()
+# print(subway)
+
+# subway.append('유재석')
+# print(subway)
+# print(subway.count('유재석'))
+
+
+# from random import * 
+# users = range(1,21)
+# print(users, type(users))
+
+# users=list(users)
+# print(users,type(users))
+
+# shuffle(users)
+# print(users)
+
+# winner = sample(users, 4)
+# print(winner)
+
+# print('당첨자발표')
+# print('치킨 당첨자: {0}'.format(winner[0]))
+# print('커피 당첨자: {0}'.format(winner[1:]))
+# print('축하합니다.')
+
+*연습>> 오전 중 연습하기
+
+
+
+>>주소관리프로그램
+
+jusos = [
+    {'no':1,'name':'홍길동','juso':'서울 강서구'},
+    {'no':2,'name':'강감찬','juso':'인천 서구'},
+]
+while True:
+    print('-'*35)
+    print('\t  주소관리프로그램\t')
+    print('-'*35)
+    print('|1.입력|2.검색|3.수정|4.삭제|0.종료|')
+    print('-'*35)
+    menu= input('메뉴선택>')
+    if menu == '0': #종료
+        print('프로그램을 종료합니다')
+        break
+    elif menu == '1': #입력
+        no = input('번호>')
+        name = input('이름>')
+        juso = input('주소>')
+        jusos.append({'no':no, 'name':name, 'juso':juso})
+        print('등록완료')
+    elif menu == '2': #검색
+        for j in jusos: #반복출력
+            print(j.get('no'),j.get('name'),j['juso'])
+        print('total',len(jusos),'명이 존재합니다.')
+    elif menu == '3': #수정
+        pass  
+    elif menu == '4': #삭제
+        pass
+    else:  #이외 숫자 입력시
+        print('메뉴 0~4를 입력하세요')      
+
+#프로그램이 실행시에만 데이터가 저장되기에 파일로 저장, 데이터베이스로 저장하도록 추가 코딩
+
+
+
+
+ex10.py
+*count=5
+i=1
+while i<=5:
+	print(i)
+	i +=1
+*무한이 아니라 n번만 반복시 가능한 조건식(잘 사용안함)
+일정 간격 증가-for 사용
+
+*들여쓰기 중요*어떤 코드들이 엮여있나 확인
+*프로그램이 길 때는 #로 시작, 종료 주석으로 체크
+함수-모듈로 가능
+목록 먼저 진행
+
+>> 코딩/ aIpm 기획안작성, 실무는 8주 교육 후에?
+
+[]리스트타입
+{}딕셔너리타입(키:값)
+
+*카멜표기?
+newNo
+*변수명 차이주는 것
+new_no(언더라인)
+방법으로 변수명 차이
+
+*키값 동일하게 써야 데이터 동일하게 
+
+adress = [
+    {'no':1, 'name': '홍길동', 'juso': '인천 서구 경서동'},
+    {'no':2, 'name': '심청이', 'juso': '경기도 광명시 철산동'},
+]
+while True:
+    print('\n****************주소관리 프로그램****************')
+    print('-'*50)
+    print('|1.입력|2.목록|3.검색|4.삭제|5.수정|0.종료|')
+    print('-'*50)
+    menu = input('메뉴 선택>')
+    if menu == '0':
+        print('프로그램을 종료합니다.')
+        break
+    elif menu == '1':
+        #입력 시작------------------------------------
+        no = []
+        for a in adress:
+            no.append(a['no'])
+        new_no = max(no)+1 #추가 번호 데이터
+        print(f'번호>{new_no}')
+        name = input('이름>')
+        juso = input('주소>')
+        adress.append({'no': new_no, 'name':name, 'juso':juso})
+        print('새로운 주소가 등록되었습니다.')
+        #입력 종료------------------------------------
+    elif menu == '2': #목록
+        #목록 시작------------------------------------
+        for a in adress:
+            print(a['no'],a['name'],a['juso'])
+        print('총',len(adress),'명이 있습니다.')
+        #목록 종료------------------------------------
+    elif menu == '3':
+        pass
+    elif menu == '4':
+        pass
+    elif menu == '5':
+        pass
+    else:
+        print('0~5번을 다시 선택하세요')
+
+
+>>데이터ㅓ 수집
+차주부터는 크롤링, 스크래핑, API로 데이터 수집 스터디
+>>SQl궁금
+>>데이터 분석,시각화,머신/딥러닝 활용 학습
+>>학습결과로 예측, 추천 등 
+>>MD,BM,마케터 활용도?
+
+
+
+*삭제: 키값은 복수가 아닌 고유값(예: 이름, 주소는 중복 가능)
+>>삭제 입력할 번호 먼저 체크
+>index, no(변수)값 차이, 
+
+a(인덱스에서 가져온 것 no입력값이 같을때 삭제 되도록 if
+
+
+address = [
+    {'no':1, 'name': '홍길동', 'juso': '인천 서구 경서동'},
+    {'no':2, 'name': '심청이', 'juso': '경기도 광명시 철산동'},
+]
+while True:
+    print('\n****************주소관리 프로그램****************')
+    print('-'*50)
+    print('|1.입력|2.목록|3.검색|4.삭제|5.수정|0.종료|')
+    print('-'*50)
+    menu = input('메뉴 선택>')
+    if menu == '0':
+        print('프로그램을 종료합니다.')
+        break
+    elif menu == '1':
+        #입력 시작------------------------------------
+        no = []
+        for a in address:
+            no.append(a['no'])
+        new_no = max(no)+1 #추가 번호 데이터
+        print(f'번호>{new_no}')
+        name = input('이름>')
+        juso = input('주소>')
+        address.append({'no': new_no, 'name':name, 'juso':juso})
+        print('새로운 주소가 등록되었습니다.')
+        #입력 종료------------------------------------
+    elif menu == '2': #목록
+        #목록 시작------------------------------------
+        for a in address:
+            print(a['no'],a['name'],a['juso'])
+        print('총',len(address),'명이 있습니다.')
+        #목록 종료------------------------------------
+    elif menu == '3':
+        #검색 시작------------------------------------
+        #검색 종료------------------------------------
+        pass
+    elif menu == '4':
+        #삭제 시작------------------------------------
+        no = input('삭제 번호>')
+        for index, a in enumerate(address):
+            if int(no) == a['no']:
+                address.pop(index)
+                print(no, '번이 삭제되었습니다.')
+            else:
+                print(no, '번은 없는 번호입니다.')
+        #삭제 종료------------------------------------
+    elif menu == '5':
+        #수정 시작------------------------------------
+        #수정 종료------------------------------------
+        pass
+    else:
+        print('0~5번을 다시 선택하세요')
+
+
+>>
+    elif menu == '4':
+        #삭제 시작------------------------------------
+        no = input('삭제 번호>')
+        if no == '':
+            continue
+        for index, a in enumerate(address): #index, no간에 일치 체크
+            if int(no) == a['no']:
+                address.pop(index)
+                print(no, '번이 삭제되었습니다.')
+            else:
+                print(no, '번은 없는 번호입니다.')
+
+
+>>빈칸 입력시 오류 안나도록
+if>continue로 설정.>
+
+#이름으로 검색
+address = [
+    {'no':1, 'name': '홍길동', 'juso': '인천 서구 경서동'},
+    {'no':2, 'name': '심청이', 'juso': '경기도 광명시 철산동'},
+]
+while True:
+    print('\n****************주소관리 프로그램****************')
+    print('-'*50)
+    print('|1.입력|2.목록|3.검색|4.삭제|5.수정|0.종료|')
+    print('-'*50)
+    menu = input('메뉴 선택>')
+    if menu == '0':
+        print('프로그램을 종료합니다.')
+        break
+    elif menu == '1':
+        #입력 시작------------------------------------
+        no = []
+        for a in address:
+            no.append(a['no'])
+        new_no = max(no)+1 #추가 번호 데이터
+        print(f'번호>{new_no}')
+        name = input('이름>')
+        juso = input('주소>')
+        address.append({'no': new_no, 'name':name, 'juso':juso})
+        print('새로운 주소가 등록되었습니다.')
+        #입력 종료------------------------------------
+    elif menu == '2': #목록
+        #목록 시작------------------------------------
+        for a in address:
+            print(a['no'],a['name'],a['juso'])
+        print('총',len(address),'명이 있습니다.')
+        #목록 종료------------------------------------
+    elif menu == '3':
+        #검색 시작------------------------------------
+        name = input('검색 이름>')
+        if name == '':
+            continue
+        for a in address:
+            if name == a['name']:
+                print(a['no'],a['name'],a['juso'])
+        #검색 종료------------------------------------
+    elif menu == '4':
+        #삭제 시작------------------------------------
+        no = input('삭제 번호>')
+        if no == '':
+            continue
+        for index, a in enumerate(address): #index, no간에 일치 체크
+            if int(no) == a['no']:
+                address.pop(index)
+                print(no, '번이 삭제되었습니다.')
+        #삭제 종료------------------------------------
+    elif menu == '5':
+        #수정 시작------------------------------------
+        #수정 종료------------------------------------
+        pass
+    else:
+        print('0~5번을 다시 선택하세요')
+
+
+
+>>부분일치는 추가
+

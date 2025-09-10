@@ -26,7 +26,7 @@ def submenu():
         #총점/평균
         df['총점']= df.apply(lambda x:sum(x['국어':'사회']), axis=1)
         df['평균'] = df['총점']/5
-        #넘값 채우기
+        #Null값 채우기
         df.fillna(0, inplace=True)
 
         cols = ['국어','영어','수학','사회','과학']
@@ -67,7 +67,7 @@ def submenu():
 
         elif menu == "2": #목록
             while True:
-                sel = inputNum("0.입력순|1.최신입력순|2.이름순|3.성적순")
+                sel = inputNum("0.입력순|1.최신입력순|2.이름순|3.성적순>")
                 if sel =="":
                     input("목록을 종료하고 메뉴로 돌아갑니다.")
                     break
